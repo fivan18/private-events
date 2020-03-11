@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_185307) do
     t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "creator"
+    t.integer "creator_id"
   end
 
   create_table "users", force: :cascade do |t|
