@@ -12,6 +12,12 @@ class SessionsController < ApplicationController
     end
   end
 
+  def event_going
+    @event = Event.find(params[:id])
+    current_user.attended_events << @event
+    redirect_to event_path(@event)
+  end
+
   def destroy
     logout
   end

@@ -10,6 +10,12 @@ class UsersController < ApplicationController
 
   end
 
+  def event_going
+    @event = Event.find(params[:id])
+    current_user.attended_events << @event
+    redirect_to even_path(@event)
+  end
+
   def create
     @user = User.new(user_params)
 

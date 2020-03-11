@@ -1,9 +1,11 @@
 <h1><%= @user.username%></h1>
 <p><%= @user.email%></p>
+<%= link_to  "Create an Event", new_event_path %> <br>
 
 <% if @upc_events.count == 0 %>
   <h3> <%= @user.username%> has not upcomming event yet</h3>
 <% else %>
+<h3> Upcomming event </h3>
 <%@upc_events.each do |event|%>
 Title : <%= event.title%>
 Date: <%= event.date%>
