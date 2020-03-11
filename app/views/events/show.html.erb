@@ -1,2 +1,10 @@
 <h1>Created by</h1>
 <p><%= @event.creator.username%></p>
+<h3>User going to this event</h3>
+<% if @event.attendees.count == 0  %>
+<h3> This event has not attendee yet! </h3>
+  <%else%>
+  <%@event.attendees.each do |user|%>
+    <p><%=user.username%></p>
+  <%end%>
+<% end %>
