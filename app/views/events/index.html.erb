@@ -1,9 +1,30 @@
 <h1>All Events</h1>
 
-<%@events.each do |event|%>
+<h3>Upcomming Events</h3>
+ 
+ <% if @events.upcom.count == 0 %>
+   <p>No upcomming event yet</p>
+ <% else %>
+
+<%@events.upcom.each do |event|%>
 Title : <%= event.title%>
 Date: <%= event.date%>
 Location: <%= event.location%>
 Description: <%= event.description%>
 Created by : <%= event.creator.username%>
+<%end%>
+
+<%end%>
+
+<% if @events.past.count == 0 %>
+  <p>No past event yet</p>
+<% else %>
+<h2> Past Event </h2>
+<%@events.past.each do |event|%>
+Title : <%= event.title%>
+Date: <%= event.date%>
+Location: <%= event.location%>
+Description: <%= event.description%>
+Created by : <%= event.creator.username%>
+<%end%>
 <%end%>
