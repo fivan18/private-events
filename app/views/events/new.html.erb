@@ -1,2 +1,24 @@
-<h1>Event#new</h1>
-<p>Find me in app/views/event/new.html.erb</p>
+<h3>new Event</h3>
+<%= form_for @event do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        The form contains <%= pluralize(@event.errors.count, "error") %>.
+      </div>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :title, "Event title:" %>
+  <%= f.text_field :title %>
+  <%= f.label :date, "event date:" %>
+  <%= f.date_field :date %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :location, "Event location" %>
+  <%= f.text_field :location %>
+  <%= f.submit %>
+<% end %>
