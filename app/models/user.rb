@@ -1,8 +1,11 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
+
   has_secure_password
   has_many :events, foreign_key: 'creator_id', class_name: 'Event',
                     dependent: :destroy
+  has_many :attendences, foreign_key: 'attendee', class_name: 'Attendence'
+  has_many :attended_events, through: :attendences
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
