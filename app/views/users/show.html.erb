@@ -1,10 +1,10 @@
 <h1><%= @user.username%></h1>
 <p><%= @user.email%></p>
 
-<% if @user.events.count == 0 %>
-  <h3> <%= @user.username%> is not currently create any event yet</h3>
+<% if @upc_events.count == 0 %>
+  <h3> <%= @user.username%> has not upcomming event yet</h3>
 <% else %>
-<%@user.events.each do |event|%>
+<%@upc_events.each do |event|%>
 Title : <%= event.title%>
 Date: <%= event.date%>
 Location: <%= event.location%>
@@ -14,9 +14,14 @@ Description: <%= event.description%>
 
 <h3>Attended Event</h3>
 
-<%@user.attended_events.each do |event|%>
+<% if @past_events.count ==0 %>
+  <h3> <%= @user.username%> has not attended any event yet</h3>
+<% else %>
+<%@past_events.each do |event|%>
 Title : <%= event.title%>
 Date: <%= event.date%>
 Location: <%= event.location%>
 Description: <%= event.description%>
+<%end%>
+
 <%end%>
