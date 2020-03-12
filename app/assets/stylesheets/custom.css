@@ -1,7 +1,5 @@
 .container{
-    margin-top:  30px;
-    
-    
+    margin-top:  30px;  
 }
 .container .head {
     display: flex;
@@ -21,9 +19,30 @@
     align-self: center;
     padding: 5px 5px 5px 5px;
     border-radius: 5px ;
+    color: white;
+    margin-top: 10px;
 
 }
 
 .container .action a {
     color: white;
 }
+
+/* Login */
+ form {
+     display: flex;
+     flex-direction: column;
+     margin: auto;
+     max-width: 500px;
+ }
+ form label {
+     margin-top: 10px;
+ }
+
+ form input {
+     border-radius: 5px ;
+     height: 30px;
+ }
+ form submit {
+     margin-top: 10px;
+ }
