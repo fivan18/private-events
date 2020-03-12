@@ -9,5 +9,6 @@ RSpec.describe Event, type: :model do
   end
   describe 'associations to test' do
     it { should belong_to(:creator).class_name('User') }
+    it { should have_many(:attendees) }
   end
 end
