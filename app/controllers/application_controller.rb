@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
     def require_user
       unless logged_in?
-        redirect_to login_url
+        redirect_to signin_path
       end
     end
 end
