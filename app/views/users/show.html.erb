@@ -1,29 +1,42 @@
-<h1><%= @user.username%></h1>
-<p><%= @user.email%></p>
-<%= link_to  "Create an Event", new_event_path %> <br>
 
+<div class="container">
+<div class = "user-info>
+<h3><%= @user.username%></h3>
+<%= link_to  "Create an Event", new_event_path, class:"action" %> <br>
+</div>
+
+<div class="event-card">
 <% if @upc_events.count == 0 %>
   <h3> <%= @user.username%> has not upcomming event yet</h3>
 <% else %>
-<h3> Upcomming event </h3>
-<%@upc_events.each do |event|%>
-Title : <%= event.title%>
-Date: <%= event.date%>
-Location: <%= event.location%>
-Description: <%= event.description%>
-<%end%>
+  <h3> Upcomming event </h3>
+  <%@upc_events.each do |event|%>
+   
+         <div class= "single-event">
+          <p>Title : <%= event.title%> </p>
+          <p>Date: <%= event.date.strftime("%m/%d/%Y")%></p>
+          <p>Created by: <%= event.creator.username%> </p>
+          <%= link_to  "view event", event_path(event.id), class:"action" %>
+         </div>
+  <%end%>
 <% end %>
+</div>
 
+<div class="event-card">
 <h3>Attended Event</h3>
-
 <% if @past_events.count ==0 %>
   <h3> <%= @user.username%> has not attended any event yet</h3>
 <% else %>
-<%@past_events.each do |event|%>
-Title : <%= event.title%>
-Date: <%= event.date%>
-Location: <%= event.location%>
-Description: <%= event.description%>
+  <%@past_events.each do |event|%>
+  
+         <div class= "single-event">
+          <p>Title : <%= event.title%> </p>
+          <p>Date: <%= event.date.strftime("%m/%d/%Y")%></p>
+          <p>Created by: <%= event.creator.username%> </p>
+          <%= link_to  "view event", event_path(event.id), class:"action" %>
+         </div>
+  <%end%>
 <%end%>
+</div>
 
-<%end%>
+</div>
