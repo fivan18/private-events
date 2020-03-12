@@ -11,7 +11,7 @@
     <div class="event-pepoles">
       <h4>User going to this event</h4>
       <% if @event.attendees.count == 0  %>
-        <h3> This event has not attendee yet! </h3>
+        <p> This event has not attendee yet! <p>
       <%else%>
         <%@event.attendees.each do |user|%>
           <p><%=user.username%></p>

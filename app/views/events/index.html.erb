@@ -12,6 +12,7 @@
           <p>Title : <%= event.title%> </p>
           <p>Date: <%= event.date.strftime("%m/%d/%Y")%></p>
           <p>Created by: <%= event.creator.username%> </p>
+          <%= link_to  "view event", event_path(event.id), class:"action" %>
          </div>
          </a>
         <%end%>
@@ -29,6 +30,7 @@
           <p>Title : <%= event.title%> </p>
           <p>Date: <%= event.date.strftime("%m/%d/%Y")%></p>
           <p>Created by: <%= event.creator.username%> </p>
+          <%= link_to  "view event", event_path(event.id), class:"action", style: "margin-bottom:10px;" %>
          </div>
          </a>
         <%end%>

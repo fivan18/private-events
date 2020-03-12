@@ -66,7 +66,7 @@ form .notice {
 
 .single-event{
     border: 1px solid red;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 5px 20px 5px;
     margin-bottom: 5px;
 }
 
@@ -77,4 +77,8 @@ form .notice {
 .event-block a {
     text-decoration: none;
     color: black;
+}
+
+.single-event .action {
+    margin-bottom: 10px;
 }
