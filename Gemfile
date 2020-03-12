@@ -42,6 +42,7 @@ group :development, :test do
 
   gem 'database_cleaner'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -54,7 +55,6 @@ group :development do
 
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
