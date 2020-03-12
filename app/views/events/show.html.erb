@@ -21,20 +21,5 @@
           <%= link_to "Go to this event", going_path(@event.id), class:"action"%>
         </div>
       </div>
-
-      <div class="event-pepoles">
-      <h4>User invited to this Event</h4>
-      <% if @event.attendees.count == 0  %>
-        <p> This event has not attendee yet! 
-          <p>
-          <%else%>
-            <%@event.attendees.each do |user|%>
-              <p><%=user.username%></p>
-            <%end%>
-          <% end %>
-          <%= link_to "Go to this event", going_path(@event.id), class:"action"%>
-        </div>
-      </div>
-      <%= link_to  "Invite people to this event", new_invitation_path %>
      
     </div>
