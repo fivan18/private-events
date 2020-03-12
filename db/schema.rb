@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_201629) do
+ActiveRecord::Schema.define(version: 2020_03_12_211054) do
 
   create_table "attendences", force: :cascade do |t|
     t.integer "attended_event_id"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 2020_03_11_201629) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "creator_id"
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sender_id"
+    t.integer "event_id"
+    t.boolean "is_accepted", default: false
   end
 
   create_table "users", force: :cascade do |t|
