@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user, only: %i[event_going]
   def new
     if logged_in?
       flash.now[:danger] = 'You already logged !'
