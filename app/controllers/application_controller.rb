@@ -5,6 +5,5 @@ class ApplicationController < ActionController::Base
 
   def require_user
     redirect_to signin_url unless logged_in?
-    
   end
 end
