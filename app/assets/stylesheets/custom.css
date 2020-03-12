@@ -1,0 +1,29 @@
+.container{
+    margin-top:  30px;
+    
+    
+}
+.container .head {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.head h1 {
+    
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.container .action {
+    background: red;
+    max-width: 150px;
+    align-self: center;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px ;
+
+}
+
+.container .action a {
+    color: white;
+}

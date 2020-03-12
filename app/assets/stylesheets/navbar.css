@@ -2,8 +2,9 @@ nav {
   background-color: blue;
   display: flex;
   justify-content: space-between;
-  padding: 20px 30px 15px;
+  padding: 20px 30px 20px;
   background-color: #f72210;
+  margin: 0px 20px 0 15px;
 }
 
 .logo {
