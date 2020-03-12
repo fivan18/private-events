@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def event_going
     @event = Event.find(params[:id])
     current_user.attended_events << @event
-    redirect_to even_path(@event)
+    redirect_to event_path(@event)
   end
 
   def create
