@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+  before_action :require_user, only: %i[event_going]
   def new
+    if logged_in?
+      flash.now[:danger] = 'You already logged !'
+      redirect_to current_user
+    else 
     @user = User.new
+    end
   end
 
   def show
@@ -13,7 +19,7 @@ class UsersController < ApplicationController
   def event_going
     @event = Event.find(params[:id])
     current_user.attended_events << @event
-    redirect_to even_path(@event)
+    redirect_to event_path(@event)
   end
 
   def create

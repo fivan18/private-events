@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :require_user, only: %i[new create]
   def new
     @event = Event.new
   end
@@ -25,4 +26,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:title, :description, :location, :date)
   end
+
 end

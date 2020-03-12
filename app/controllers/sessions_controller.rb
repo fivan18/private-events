@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    if logged_in?
+      flash.now[:danger] = 'You already logged !'
+      redirect_to current_user
+    end
   end
 
   def create

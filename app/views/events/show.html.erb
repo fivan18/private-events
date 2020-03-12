@@ -1,15 +1,25 @@
-<h1>Created by</h1>
-<p><%= @event.creator.username%></p>
-<h3>User going to this event</h3>
-<% if @event.attendees.count == 0  %>
-<h3> This event has not attendee yet! </h3>
-  <%else%>
-  <%@event.attendees.each do |user|%>
-    <p><%=user.username%></p>
-  <%end%>
-<% end %>
-
-
-<%= link_to "Go to this event", going_path(@event.id)%> 
-
-
+<div class="container">
+  <h3>Single event</h3>
+  <div class="event-block">
+    <div class="event-card">
+      <h4>Title of this event: <%=@event.title%></h4>
+      <p>Date: <%= @event.date.strftime("%m/%d/%Y")%> </p>
+      <p>Location of this event: <%= @event.creator.username%></p>
+      <p>created by: <%= @event.creator.username%></p>
+      <p>More details: <%= truncate(@event.description, :length => 10, :separator => ' ')%></p>
+    </div>
+    <div class="event-pepoles">
+      <h4>User going to this event</h4>
+      <% if @event.attendees.count == 0  %>
+        <p> This event has not attendee yet! <p>
+      <%else%>
+        <%@event.attendees.each do |user|%>
+          <p><%=user.username%></p>
+        <%end%>
+      <% end %>
+      <%= link_to "Go to this event", going_path(@event.id), class:"action"%>
+    </div>
+    
+  </div>
+  
+</div>
