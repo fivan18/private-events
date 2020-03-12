@@ -1,6 +1,6 @@
 example_id                           | status | run_time        |
 ------------------------------------ | ------ | --------------- |
-./spec/feature/event_spec.rb[1:1:1]  | passed | 19.38 seconds   |
+./spec/feature/event_spec.rb[1:1:1]  | passed | 13.66 seconds   |
 ./spec/feature/signin_spec.rb[1:1:1] | passed | 5.38 seconds    |
 ./spec/feature/signup_spec.rb[1:1]   | passed | 13.83 seconds   |
 ./spec/models/event_spec.rb[1:1:1]   | passed | 0.0136 seconds  |
