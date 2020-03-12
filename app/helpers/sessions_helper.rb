@@ -12,6 +12,10 @@ module SessionsHelper
     redirect_to signin_path
   end
 
+  def logged_in?
+    !current_user.nil?
+  end
+
   def current_user
     if (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)

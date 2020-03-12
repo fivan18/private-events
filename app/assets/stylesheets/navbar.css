@@ -28,3 +28,9 @@ nav ul li {
   color: white;
 }
 
+ul li a{
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
