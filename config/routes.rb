@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :events, only: [:new, :create, :index, :show]
   resources :users, only: [:new, :show, :create]
   resources :sessions, only: [:new, :destroy, :create]
+  resources :invitations, only: %i[new create]
 end

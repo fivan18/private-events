@@ -6,6 +6,8 @@ class User < ApplicationRecord
                     dependent: :destroy
   has_many :attendences, foreign_key: 'attendee', class_name: 'Attendence'
   has_many :attended_events, through: :attendences
+  has_many :invitations
+  has_many :sent_invitations, foreign_key: :sender_id, class_name: 'Invitation'
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)

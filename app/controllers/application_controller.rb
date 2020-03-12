@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_user
-    flash[:danger] = 'Action not Allowed . You must logged in!'
     redirect_to signin_url unless logged_in?
+    
   end
 end

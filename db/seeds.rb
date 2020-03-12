@@ -25,3 +25,11 @@ b.date = Date.new
 b.description = "blaaaa blaaaa"
 b.creator_id = a.id
 b.save
+
+b = Event.new
+b.title = "festival music3"
+b.location = "Haiti3"
+b.date = DateTime.now
+b.description = "blaaaa blaaaa3"
+b.creator_id = a.id
+b.save
