@@ -5,19 +5,20 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    @event = Event.find(params[:event_id])
-    @invitee = User.find_by(emai: params[:user_email])
-    # @invitation = current_user.sent_invitations.build(params_invitation)
-    @invitation = Intivation.new
-    @Intivation.sender_id = current_user
-    @invitation.event_id = @event
-    @invivation.user_id = @invitee
-
+    @invitation = Invitation.new(params_invitation)
+    @invitation.sender_id = current_user.id
     if @invitation.save
+      flash[:notice] = 'Invitation sent!'
       redirect_to @invitation.event
     else
       flash[:danger] = 'failed to send invitation'
-      render new
+      render 'new'
     end
+  end
+
+  private
+
+  def params_invitation
+    params.require(:invitation).permit(:event_id, :user_id)
   end
 end
