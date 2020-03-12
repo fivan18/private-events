@@ -1,4 +1,7 @@
-<%= form_for @user do |f| %>
+ 
+ <div class="container">
+ <h3>Sign up</h3>
+ <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-danger">
@@ -11,13 +14,16 @@
       </ul>
     </div>
   <% end %>
-  <%= f.label :username, "username:" %>
+  <%= f.label :username, "Username:" %>
   <%= f.text_field :username %>
-  <%= f.label :email, "email:" %>
+  <%= f.label :email, "Email:" %>
   <%= f.email_field :email %>
-  <%= f.label :password %>
+  <%= f.label :password, "Passord:" %>
   <%= f.password_field :password %>
-  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.label :password_confirmation, "Confirm Password:" %>
   <%= f.password_field :password_confirmation %>
-  <%= f.submit %>
+  <%= f.submit 'Sign up' , class:"action"%>
+  <%= link_to  "Have an account? click here", signin_path , class: "notice" %>
 <% end %>
+
+</div>

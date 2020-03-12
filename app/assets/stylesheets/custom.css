@@ -27,6 +27,10 @@
 .container .action a {
     color: white;
 }
+.container h3 {
+   text-align: center;
+   font-size: 30px;
+}
 
 /* Login */
  form {
@@ -43,6 +47,13 @@
      border-radius: 5px ;
      height: 30px;
  }
- form submit {
-     margin-top: 10px;
+ form #error_explanation{
+ color: red;
+ }
+ form .notice{
+     color: rgb(92, 89, 89);
+     text-decoration: underline;
+     align-self: center;
+     font-size: 13px;
+     margin-top: 5px;
  }
