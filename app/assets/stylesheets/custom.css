@@ -63,3 +63,18 @@ form .notice {
     margin: auto;
     justify-content: space-around;
 }
+
+.single-event{
+    border: 1px solid red;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 5px;
+}
+
+.single-event p:first-of-type{
+    border-bottom: solid 1px red;
+    font-weight: 700;
+}
+.event-block a {
+    text-decoration: none;
+    color: black;
+}
