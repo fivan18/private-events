@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations to test' do
+    it { should validate_presence_of(:username) }
+    it { should validate_presence_of(:email) }
+  end
+  describe 'associations to test' do
+    it { should have_many(:events) }
+    it { should have_many(:attended_events) }
+  end
 end
