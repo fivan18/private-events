@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def new
+    if logged_in?
+      flash.now[:danger] = 'You already logged !'
+      redirect_to current_user
+    else 
     @user = User.new
+    end
   end
 
   def show
