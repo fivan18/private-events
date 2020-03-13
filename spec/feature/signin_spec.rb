@@ -9,7 +9,7 @@ RSpec.describe 'the signin process', type: :feature, js: true do
       fill_in 'Passord', with: 'password'
       fill_in 'Confirm Password', with: 'password'
       click_on 'Sign up'
-      find('a[href*="logout"]').click 
+      find('a[href*="logout"]').click
     end
 
     scenario 'sign in process' do
