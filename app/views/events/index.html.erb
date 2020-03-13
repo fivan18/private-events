@@ -1,0 +1,39 @@
+<div class="container">
+  <h3>All Events</h3>
+  <div class="event-block">
+    <div class="event-card">
+      <h3>Upcomming Events</h3>
+      <% if @events.upcom.count == 0 %>
+        <p>No upcomming event yet</p>
+      <% else %>
+        <%@events.upcom.each do |event|%>
+        <a href="/events/<%=event.id%>">
+         <div class= "single-event">
+          <p>Title : <%= event.title%> </p>
+          <p>Date: <%= event.date.strftime("%m/%d/%Y")%></p>
+          <p>Created by: <%= event.creator.username%> </p>
+          <%= link_to  "view event", event_path(event.id), class:"action" %>
+         </div>
+         </a>
+        <%end%>
+      <%end%>
+    </div>
+    <div class="event-card">
+      <% if @events.past.count == 0 %>
+        <p>No past event yet</p>
+      <% else %>
+        <h3> Past Event </h3>
+        
+       <%@events.past.each do |event|%>
+       <a href="/events/<%=event.id%>">
+         <div class= "single-event">
+          <p>Title : <%= event.title%> </p>
+          <p>Date: <%= event.date.strftime("%m/%d/%Y")%></p>
+          <p>Created by: <%= event.creator.username%> </p>
+          <%= link_to  "view event", event_path(event.id), class:"action", style: "margin-bottom:10px;" %>
+         </div>
+         </a>
+        <%end%>
+    <%end%>
+  </div>
+</div>

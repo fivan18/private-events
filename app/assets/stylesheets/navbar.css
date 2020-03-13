@@ -1,0 +1,38 @@
+nav {
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px 20px;
+  background-color: #f72210;
+  margin: 0px 20px 0 15px;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  display: inline-block;
+  padding: 2px 12px;
+  font-family: 'Roboto Condensed', sans-serif;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 10px;
+  font-size: 14px;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: bold;
+  color: white;
+}
+
+ul li a{
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+

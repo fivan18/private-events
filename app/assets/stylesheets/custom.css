@@ -1,0 +1,84 @@
+.container {
+  margin-top: 30px;
+}
+.container .head {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.head h1 {
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+.container .action {
+  background: red;
+  max-width: 150px;
+  align-self: center;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.container .action a {
+  color: white;
+  text-decoration: none;
+}
+.container h3 {
+  text-align: center;
+  font-size: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 500px;
+}
+form label {
+  margin-top: 10px;
+}
+
+form input {
+  border-radius: 5px;
+  height: 30px;
+}
+form #error_explanation {
+  color: red;
+}
+form .notice {
+  color: rgb(92, 89, 89);
+  text-decoration: underline;
+  align-self: center;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.event-block {
+    display: flex;
+    max-width: 600px;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.single-event{
+    border: 1px solid red;
+    padding: 5px 5px 20px 5px;
+    margin-bottom: 5px;
+}
+
+.single-event p:first-of-type{
+    border-bottom: solid 1px red;
+    font-weight: 700;
+}
+.event-block a {
+    text-decoration: none;
+    color: black;
+}
+
+.single-event .action {
+    margin-bottom: 10px;
+}

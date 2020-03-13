@@ -1,0 +1,12 @@
+<div class="container">
+<h3>Login</h3>
+<%= form_for(:session, url: signin_path) do |f| %>
+  <%= f.label :email, "Email:" %>
+  <%= f.email_field :email %>
+  <%= f.label :password , "Password:"%>
+  <%= f.password_field :password %>
+  
+  <%= f.submit 'Sign in' , class:"action"%>
+  <%= link_to  "New to private event? click here", signup_path , class: "notice" %>
+<% end %>
+</div>

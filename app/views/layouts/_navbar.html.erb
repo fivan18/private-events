@@ -1,0 +1,16 @@
+<nav>
+  <%= link_to "PRIVATE EVENTS", root_path, class: 'logo' %>
+  <ul class = "nav-bar">
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Events", events_path %></li>
+    <% if logged_in? %>
+    <li><%= link_to "Create event", new_event_path %></li>
+        <li><%= link_to "Profile", user_path(current_user.id) %></li>
+    <li><%= link_to "Log out", logout_path %></li>
+
+      <%else%>
+       <li><%= link_to "Login", signin_path %></li>
+    <% end %>
+    
+  </ul>
+</nav>

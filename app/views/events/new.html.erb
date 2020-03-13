@@ -1,0 +1,29 @@
+<div class="container">
+
+<h3>New Event</h3>
+<%= form_for @event do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        The form contains <%= pluralize(@event.errors.count, "error") %>.
+      </div>
+      <ul>
+        <% @event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :title, "Event title:" %>
+  <%= f.text_field :title %>
+  <%= f.label :date, "Event date:" %>
+  <%= f.date_field :date %>
+  <%= f.label :description, "More detail about this event" %>
+  <%= f.text_area :description %>
+  <%= f.label :location, "Event location" %>
+  <%= f.text_field :location %>
+  <%= f.submit 'Add event', class:"action" %>
+
+<% end %>
+</div>

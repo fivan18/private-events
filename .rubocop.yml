@@ -38,6 +38,10 @@ Style/AndOr:
   Enabled: false
 Style/DefWithParentheses:
   Enabled: false
+Style/GuardClause:
+   Enabled: false
+Style/IdenticalConditionalBranches:
+   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 

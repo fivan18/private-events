@@ -1,0 +1,15 @@
+<div class="container">
+  <section class= "head">
+    <h1>Welcome to Private Events!</h1>
+    <p>The best place to create event , invite people and atendee to your favorite event </p>
+    <% if  logged_in? %>
+       <div class="action">
+       <%= link_to  "Add a new event!", new_event_path, class: "action_button" %>
+     </div>
+    <% else %>
+     <div class="action">
+       <%= link_to  "Get started!", signin_path, class: "action_button" %>
+     </div>
+     <%end%>
+  </section>
+</div>

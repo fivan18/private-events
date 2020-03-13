@@ -1,0 +1,29 @@
+ 
+ <div class="container">
+ <h3>Sign up</h3>
+ <%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        The form contains <%= pluralize(@user.errors.count, "error") %>.
+      </div>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :username, "Username:" %>
+  <%= f.text_field :username %>
+  <%= f.label :email, "Email:" %>
+  <%= f.email_field :email %>
+  <%= f.label :password, "Passord:" %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation, "Confirm Password:" %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit 'Sign up' , class:"action"%>
+  <%= link_to  "Have an account? click here", signin_path , class: "notice" %>
+<% end %>
+
+</div>
