@@ -9,12 +9,6 @@ RSpec.describe 'the signin process', type: :feature, js: true do
       fill_in 'Passord', with: 'password'
       fill_in 'Confirm Password', with: 'password'
       click_on 'Sign up'
-
-      visit signin_path
-      fill_in 'Email', with: 'user6@gmail.com'
-      fill_in 'Password', with: 'password'
-      sleep(2)
-      click_on 'Sign in'
     end
 
     scenario 'create an event' do
